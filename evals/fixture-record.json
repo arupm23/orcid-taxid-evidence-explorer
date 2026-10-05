@@ -1,0 +1,69 @@
+{
+  "researcher": {"orcid": "0000-0002-1825-0097"},
+  "publications": [
+    {
+      "pmid": "12345678",
+      "title": "Experimental Vaccinia virus vaccine study",
+      "abstract": "We evaluated an experimental vaccine platform using Vaccinia virus in a controlled research setting.",
+      "year": 2024,
+      "publication_type": "research"
+    },
+    {
+      "pmid": "87654321",
+      "title": "Escherichia coli plasmid sequencing",
+      "abstract": "Nucleotide sequencing characterized a bacterial plasmid in Escherichia coli.",
+      "year": 2022,
+      "publication_type": "research"
+    },
+    {
+      "pmid": "11111111",
+      "title": "Metabolic engineering in baker's yeast",
+      "abstract": "A fermentation study optimized carbon metabolism in Saccharomyces cerevisiae.",
+      "year": 2023,
+      "publication_type": "research"
+    },
+    {
+      "pmid": "22222222",
+      "title": "Transcriptomic markers in human cancer",
+      "abstract": "Human tumor expression profiles were evaluated for diagnostic biomarkers.",
+      "year": 2021,
+      "publication_type": "research"
+    },
+    {
+      "pmid": "33333333",
+      "title": "A review of influenza vaccine platforms",
+      "abstract": "This review summarizes vaccine technologies and does not report experiments by the authors.",
+      "year": 2020,
+      "publication_type": "review"
+    },
+    {
+      "pmid": "44444444",
+      "title": "Plant genome annotation methods",
+      "abstract": "Computational annotation methods were compared using a model plant genome.",
+      "year": 2019,
+      "publication_type": "research"
+    }
+  ],
+  "taxa": [
+    {"taxid": 10245, "scientific_name": "Vaccinia virus", "rank": "species"},
+    {"taxid": 562, "scientific_name": "Escherichia coli", "rank": "species"}
+  ],
+  "evidence": [
+    {
+      "pmid": "12345678",
+      "taxid": 10245,
+      "evidence_type": "ncbi_linked_nucleotide_taxid",
+      "directness": "direct_author",
+      "confidence": 0.9,
+      "explanation": "Synthetic evaluation fixture: linked nucleotide evidence for Vaccinia virus."
+    },
+    {
+      "pmid": "87654321",
+      "taxid": 562,
+      "evidence_type": "ncbi_linked_nucleotide_taxid",
+      "directness": "direct_author",
+      "confidence": 0.9,
+      "explanation": "Synthetic evaluation fixture: linked nucleotide evidence for Escherichia coli."
+    }
+  ]
+}
