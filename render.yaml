@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: orcid-taxid-evidence-explorer
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT run:app
+    healthCheckPath: /api/health
+    envVars:
+      - key: EMBEDDING_PROVIDER
+        value: local
+      - key: DATABASE_PATH
+        value: /tmp/evidence.db
+      - key: NCBI_TOOL
+        value: orcid-taxid-evidence-explorer
+      - key: NCBI_EMAIL
+        sync: false
