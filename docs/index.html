@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Static overview of the ORCID–TAXID Evidence Explorer biosecurity project.">
+  <title>ORCID–TAXID Evidence Explorer</title>
+  <style>
+    :root {
+      --ink: #14231d;
+      --muted: #637169;
+      --paper: #f4f1e9;
+      --panel: #fffdf8;
+      --green: #165f45;
+      --green-soft: #dcece4;
+      --line: #d8ddd7;
+      --shadow: 0 20px 60px rgba(20, 35, 29, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 7% 3%, rgba(190, 220, 205, .9), transparent 30rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .shell { width: min(1120px, calc(100% - 36px)); margin: auto; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+    .brand { font-weight: 850; letter-spacing: -.03em; text-decoration: none; }
+    .nav-link { color: var(--green); font-size: .88rem; font-weight: 750; }
+    .hero { padding: 84px 0 70px; }
+    .eyebrow { color: var(--green); font-size: .74rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.08; }
+    h1 { max-width: 920px; margin-bottom: 24px; font-family: Georgia, serif; font-size: clamp(3rem, 7vw, 6.8rem); letter-spacing: -.055em; }
+    h2 { font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -.035em; }
+    h3 { margin-bottom: 8px; font-size: 1rem; }
+    .lede { max-width: 760px; color: var(--muted); font-size: 1.17rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .button { display: inline-block; padding: 12px 18px; border: 1px solid var(--green); border-radius: 999px; color: var(--green); font-weight: 800; text-decoration: none; }
+    .button.primary { background: var(--green); color: white; }
+    .notice { margin: 0 0 24px; padding: 14px 18px; border: 1px solid rgba(22, 95, 69, .22); border-radius: 14px; background: var(--green-soft); font-size: .88rem; }
+    section { padding: 74px 0; border-top: 1px solid var(--line); }
+    .section-intro { max-width: 760px; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; }
+    .card { padding: 24px; border: 1px solid rgba(22, 95, 69, .14); border-radius: 18px; background: rgba(255, 253, 248, .86); box-shadow: var(--shadow); }
+    .card p { margin-bottom: 0; color: var(--muted); font-size: .92rem; }
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 32px; }
+    .flow div { position: relative; padding: 18px 14px; border-radius: 14px; background: var(--panel); text-align: center; font-size: .84rem; font-weight: 750; box-shadow: var(--shadow); }
+    .flow div:not(:last-child)::after { content: "→"; position: absolute; right: -10px; color: var(--green); }
+    .impact { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; align-items: start; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .mock { overflow: hidden; border: 1px solid rgba(22, 95, 69, .17); border-radius: 22px; background: var(--panel); box-shadow: var(--shadow); }
+    .mock-head { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; border-bottom: 1px solid var(--line); }
+    .pill { padding: 5px 9px; border-radius: 999px; background: var(--green-soft); color: var(--green); font-size: .68rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+    .mock-body { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+    .mock-panel { padding: 22px; background: var(--panel); }
+    .metric { display: flex; justify-content: space-between; margin-bottom: 12px; padding: 12px; border-radius: 12px; background: #eff3f0; }
+    .citation { display: block; margin-top: 12px; padding: 12px; border-radius: 12px; background: #f3f0e8; font-size: .82rem; }
+    footer { padding: 36px 0 50px; color: var(--muted); font-size: .8rem; }
+    @media (max-width: 780px) {
+      .grid, .impact, .mock-body { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; }
+      .flow div:not(:last-child)::after { content: "↓"; right: 50%; bottom: -14px; top: auto; }
+      .hero { padding-top: 50px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="shell">
+    <a class="brand" href="#top">ORCID–TAXID</a>
+    <a class="nav-link" href="https://github.com/arupm23/orcid-taxid-evidence-explorer">View source on GitHub</a>
+  </nav>
+
+  <main id="top">
+    <header class="hero shell">
+      <p class="eyebrow">Biosecurity decision support · Static project overview</p>
+      <h1>Trace researcher–organism evidence.</h1>
+      <p class="lede">The ORCID–TAXID Evidence Explorer maps a researcher's public ORCID-linked scientific record to NCBI Taxonomy identifiers, helping DNA synthesis screening teams find relevant, source-backed evidence faster.</p>
+      <div class="actions">
+        <a class="button primary" href="#project">Explore the project</a>
+        <a class="button" href="https://github.com/arupm23/orcid-taxid-evidence-explorer/blob/main/RUN_FROM_DESKTOP.md">Run the MVP locally</a>
+      </div>
+    </header>
+
+    <div class="shell notice"><strong>Static representation:</strong> this page explains the project but does not perform live ORCID or NCBI retrieval. The runnable MVP is available in the GitHub repository.</div>
+
+    <section id="project">
+      <div class="shell">
+        <p class="eyebrow">Basic details</p>
+        <h2>Evidence, not an automated verdict.</h2>
+        <p class="section-intro">The MVP validates an ORCID iD, retrieves linked PubMed publications, follows NCBI nucleotide-record links, resolves canonical TAXIDs, and presents cited relationships for qualified human review.</p>
+        <div class="grid">
+          <article class="card"><h3>Provenance first</h3><p>Every researcher–organism relationship is connected to public publication and NCBI evidence.</p></article>
+          <article class="card"><h3>No generative LLM</h3><p>Deterministic templates present retrieved facts without generating or modifying scientific claims.</p></article>
+          <article class="card"><h3>Human authority</h3><p>The tool does not approve orders, assign trust scores, or determine legitimate intent.</p></article>
+        </div>
+        <div class="flow" aria-label="Project evidence flow">
+          <div>ORCID iD</div><div>PubMed records</div><div>NCBI nucleotide links</div><div>Canonical TAXIDs</div><div>Cited review</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell impact">
+        <div><p class="eyebrow">Motivation</p><h2>Reduce screening friction.</h2></div>
+        <div><p>When a DNA synthesis order involves an organism or biological function of concern, reviewers may need to investigate whether the customer has a credible scientific reason for requesting it. Relevant information is distributed across researcher profiles, publications, and biological databases.</p><p>Manual investigation can be slow, inconsistent, and difficult to audit. It can also delay legitimate work by vaccine researchers, diagnostic developers, public-health scientists, and other responsible customers. This project explores whether public scholarly identifiers can make that evidence-gathering step faster and more transparent.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <p class="eyebrow">Illustrative interface</p>
+        <h2>A concise, cited evidence record.</h2>
+        <div class="mock" role="img" aria-label="Static mock-up of the evidence interface">
+          <div class="mock-head"><strong>Retrieved researcher record</strong><span class="pill">Human review required</span></div>
+          <div class="mock-body">
+            <div class="mock-panel"><p class="eyebrow">Evidence summary</p><div class="metric"><span>Publications</span><strong>12</strong></div><div class="metric"><span>Linked taxa</span><strong>4</strong></div><div class="metric"><span>Evidence links</span><strong>9</strong></div></div>
+            <div class="mock-panel"><p class="eyebrow">Example relationship</p><h3>Organism scientific name</h3><p>TAXID 00000 · public sequence-linked evidence</p><span class="citation">Publication title · PMID citation · source link</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell impact">
+        <div><p class="eyebrow">Positive impact</p><h2>Better-informed human review.</h2></div>
+        <ul>
+          <li>Reduce repetitive literature and database searches.</li>
+          <li>Provide citations for researcher–organism relationships.</li>
+          <li>Make screening investigations more consistent and auditable.</li>
+          <li>Reduce avoidable delays for legitimate scientific work.</li>
+          <li>Help reviewers focus on unexplained or concerning requests.</li>
+          <li>Complement existing customer and sequence-screening systems.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <p class="eyebrow">Responsible use</p>
+        <h2>Absence of evidence is not evidence of absence.</h2>
+        <p class="section-intro">Publication history does not prove identity, authorization, laboratory experience, biosafety approval, benign intent, or legitimate end use. ORCID and PubMed coverage are incomplete. This project should be treated as one evidence source within a broader screening process.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">ORCID–TAXID Evidence Explorer · Experimental biosecurity decision-support project · Not an order-approval system</footer>
+</body>
+</html>
