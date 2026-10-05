@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ORCID–TAXID Evidence Explorer</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">Human-reviewed decision support</p>
+        <h1>ORCID–TAXID Evidence Explorer</h1>
+        <p class="lede">Trace public PubMed records to NCBI taxonomy evidence. No automatic approvals, no hidden trust score.</p>
+      </div>
+      <span class="badge">MVP</span>
+    </header>
+
+    <section class="panel ingest-panel">
+      <label for="orcid">Researcher ORCID</label>
+      <div class="row">
+        <input id="orcid" value="0000-0001-6827-8701" placeholder="0000-0000-0000-0000" autocomplete="off">
+        <button id="ingest">Retrieve evidence</button>
+      </div>
+      <p class="hint">The first retrieval can take several seconds because each publication is checked for NCBI taxonomy links.</p>
+      <div id="status" class="status" aria-live="polite"></div>
+    </section>
+
+    <section class="workspace">
+      <div class="panel chat-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Evidence assistant</p>
+            <h2>Ask about the record</h2>
+          </div>
+        </div>
+        <div id="messages" class="messages">
+          <article class="message assistant">Retrieve an ORCID, then ask “Which organisms are linked?” or “Is there evidence for TAXID 10255?”</article>
+        </div>
+        <form id="chat-form" class="composer">
+          <input id="question" placeholder="Ask an evidence question…" autocomplete="off">
+          <button>Ask</button>
+        </form>
+      </div>
+
+      <aside class="panel evidence-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Retrieved record</p>
+            <h2>Evidence summary</h2>
+          </div>
+        </div>
+        <div id="summary" class="empty">No record loaded.</div>
+      </aside>
+    </section>
+
+    <footer>
+      Publication history does not establish identity, authorization, biosafety approval, or legitimate intent. A qualified human reviewer must make fulfillment decisions.
+    </footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
