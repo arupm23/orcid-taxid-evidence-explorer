@@ -6,6 +6,8 @@ The MVP searches ORCID-linked PubMed publications, follows relevant NCBI nucleot
 
 The tool is designed to support qualified human reviewers. It does not approve or reject orders, assign trust scores, or determine whether a researcher has legitimate intent.
 
+[View the static project overview](https://arupm23.github.io/orcid-taxid-evidence-explorer/) · [Read the detailed desktop guide](RUN_FROM_DESKTOP.md)
+
 ## Basic details
 
 - Validates ORCID identifiers, including their checksums.
@@ -41,6 +43,87 @@ If validated with real screening teams, this project could:
 - improve biosecurity without relying on an opaque automated trust score.
 
 The intended impact is better-informed human review. The tool is deliberately designed to communicate uncertainty and preserve human responsibility for fulfillment decisions.
+
+## Getting started
+
+### Prerequisites
+
+Before running the project, make sure you have:
+
+- Python 3.9 or newer;
+- Git;
+- an internet connection for ORCID and NCBI data; and
+- a valid email address for NCBI API requests.
+
+### 1. Download the project
+
+Open Terminal and run:
+
+```bash
+cd ~/Desktop
+git clone https://github.com/arupm23/orcid-taxid-evidence-explorer.git
+cd orcid-taxid-evidence-explorer
+```
+
+If you have already downloaded the project, update it instead:
+
+```bash
+cd ~/Desktop/orcid-taxid-evidence-explorer
+git pull
+```
+
+### 2. Create the Python environment
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+### 3. Configure NCBI access
+
+Create your local configuration file:
+
+```bash
+cp .env.example .env
+open -e .env
+```
+
+In `.env`, replace the example NCBI email address with your own. An NCBI API key is optional, but it can provide a higher request limit.
+
+Load the configuration into the current Terminal session:
+
+```bash
+set -a
+source .env
+set +a
+```
+
+### 4. Start the application
+
+```bash
+python run.py
+```
+
+Then open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser. Keep the Terminal window open while using the application. Press `Control+C` in Terminal to stop it.
+
+### 5. Use the evidence explorer
+
+1. Enter a valid ORCID iD.
+2. Start the evidence retrieval process.
+3. Review the organisms, TAXIDs, publications, evidence strength, and source links.
+4. Use the question box for deterministic, citation-backed summaries of the retrieved record.
+
+## Run the automated tests
+
+With the virtual environment active, run:
+
+```bash
+python -m pytest
+```
+
+For more desktop commands and troubleshooting, see [RUN_FROM_DESKTOP.md](RUN_FROM_DESKTOP.md).
 
 ## Responsible-use note
 
